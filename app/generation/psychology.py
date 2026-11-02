@@ -131,6 +131,9 @@ def generate_psychology(profile: dict, rng: random.Random) -> dict:
     if shopping == "impulse_buyer":
         raw["conscientiousness"] = min(raw["conscientiousness"], 60)
 
+    if shopping == "impulse_buyer":
+        raw["conscientiousness"] = min(raw["conscientiousness"], 60)
+
     scores = {trait: _clamp(value) for trait, value in raw.items()}
     o, c, e, a, n = (scores[t] for t in TRAITS)
 
@@ -207,4 +210,5 @@ def generate_psychology(profile: dict, rng: random.Random) -> dict:
             "novelty_seeking": _level(o),
         },
     }
+
 
